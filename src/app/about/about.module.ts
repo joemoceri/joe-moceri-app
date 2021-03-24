@@ -12,6 +12,7 @@ import { MatDividerModule } from '@angular/material/divider';
 // import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatInputModule, MatCardModule, MatDividerModule } from '@angular/material';
 
 import { AboutComponent } from './about.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 const routes: Routes = [
     {
         path     : '',
@@ -35,7 +36,8 @@ const routes: Routes = [
         MatIconModule,
         // MatInputModule,
         // MatCardModule,
-        MatDividerModule,
+      MatDividerModule,
+      FlexLayoutModule
     ]
 })
 export class AboutModule
