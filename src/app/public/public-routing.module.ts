@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 import { AboutModule } from '../about/about.module';
 import { CvModule } from '../cv/cv.module';
+import { SwingingInCavesModule } from '../games/swinging-in-caves/swinging-in-caves.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { CvModule } from '../cv/cv.module';
     RouterModule,
     AboutModule,
     CvModule,
+    SwingingInCavesModule,
       FlexLayoutModule
   ]
 })

@@ -10,7 +10,7 @@
               <h2 style="margin-bottom: 0px !important;">
                 <a style="color: #fff;" href="javascript:void(0)" [routerLink]="'/about'" [routerLinkActive]="['router-link-active']">About</a> |
                 <a style="color: #fff;" href="javascript:void(0)" [routerLink]="'/timeline'" [routerLinkActive]="['router-link-active']">Timeline</a> |
-                <button mat-button [matMenuTriggerFor]="menu"><span style="color: #fff;">Games</span></button>
+                <button mat-button [matMenuTriggerFor]="menu"><span style="color: #fff;">{{gamesNavButtonText}}</span></button>
                 <mat-menu #menu="matMenu">
                   <button mat-menu-item>Box Copter Hero</button>
                   <button mat-menu-item>Box Copter Hero 3D</button>
@@ -18,10 +18,21 @@
                   <button mat-menu-item>MetalTron</button>
                   <button mat-menu-item>R Down</button>
                   <button mat-menu-item>Run Through The Hills</button>
-                  <button mat-menu-item>Swinging In Caves</button>
+                  <button mat-menu-item [routerLink]="'/games/swinging-in-caves'">Swinging In Caves</button>
                   <button mat-menu-item>Symbol Match</button>
                   <button mat-menu-item>The Star Maker</button>
                 </mat-menu>
+                <a id="navigatorId" href="" target="_blank"></a>
+                <button mat-button [matMenuTriggerFor]="projectsMenu"><span style="color: #fff;">Projects</span></button>
+                <mat-menu #projectsMenu="matMenu">
+                  <button mat-menu-item (click)="navigate('https://github.com/jmoceri34/angularjs-chart-service')">angularjs-chart-service</button>
+                  <button mat-menu-item (click)="navigate('https://github.com/jmoceri34/angularjs-datatables-service')">angularjs-datatables-service</button>
+                  <button mat-menu-item (click)="navigate('https://jmoceri34.github.io/unity-effects-pack/')">Unity Effects Pack</button>
+                  <button mat-menu-item (click)="navigate('https://github.com/jmoceri34/expression-evaluator')">Expression Evaluator</button>
+                  <button mat-menu-item (click)="navigate('https://github.com/jmoceri34/field-mapper')">Field Mapper</button>
+                  <button mat-menu-item (click)="navigate('https://github.com/jmoceri34/google-analytics-service')">Google Analytics Service</button>
+                </mat-menu>
+
                 <span style="float: right;">
                   <a style="padding: 6px; align-content: center;" href="https://stackoverflow.com/users/8293151/jmoceri" target="_blank"><img src="assets/images/icons/stack-overflow-icon.png" style="width: 32px; height: 32px;" /></a>
                   <a style="padding: 6px; align-content: center;" href="https://github.com/jmoceri34" target="_blank"><img src="assets/images/icons/GitHub-Mark-32px.png" style="width: 32px; height: 32px;" /></a>
