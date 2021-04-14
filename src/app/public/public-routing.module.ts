@@ -8,7 +8,7 @@ import { PublicComponent } from './public.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 import { AboutModule } from '../about/about.module';
-//import { CvModule } from '../cv/cv.module';
+import { CvModule } from '../cv/cv.module';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { AboutModule } from '../about/about.module';
     MatDividerModule,
     RouterModule,
     AboutModule,
-    //CvModule,
+    CvModule,
       FlexLayoutModule
   ]
 })

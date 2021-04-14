@@ -1,0 +1,131 @@
+#cv {
+    width: 100%;
+}
+
+.secondary-text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+mgl-timeline mgl-timeline-entry .mgl-timeline-entry-card {
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  background-color: white !important;
+  color: black;
+}
+
+#cv-form {
+    max-width: 100%;
+}
+
+a {
+
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.header-icon {
+    color: #4285F4;
+}
+
+mgl-timeline .mgl-timeline-line {
+    left: 2% !important;
+}
+
+mgl-timeline-entry.alternate {
+    margin-left: calc(2% + 5px) !important;
+}
+
+mgl-timeline-entry {
+    width: calc(98% - 5px) !important;
+}
+
+mgl-timeline-entry-content > div {
+    padding: 0 !important;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container > div {
+
+}
+
+.example-container > div > button {
+
+}
+
+.ec-container-h {
+    width: 100%;
+}
+
+
+.example-container > h2 {
+
+}
+
+.example-container > mat-form-field  {
+    width: 100%;
+}
+
+.example-container > mat-chip-list {
+    width: 100%;
+}
+
+.example-container > mat-checkbox {
+    width: 100%;
+}
+
+.example-container > p {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+tr.example-detail-row {
+    height: 0 !important;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: #f5f5f5;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+}
+
+.example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+}
+
+.example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+}
+
+.example-element-description {
+    padding: 16px;
+}
+
+.example-element-description-attribution {
+    opacity: 0.5;
+}

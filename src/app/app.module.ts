@@ -5,10 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-//import { TourMatMenuModule } from 'ngx-tour-md-menu';
-//import { MglTimelineModule } from 'angular-mgl-timeline';
-//import { ModalService } from './modal/modal.service';
-//import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { TourMatMenuModule } from 'ngx-tour-md-menu';
+import { MglTimelineModule } from 'angular-mgl-timeline';
+import { ModalService } from './modal/modal.service';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -21,9 +20,11 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     FormsModule,
     CommonModule,
+    MglTimelineModule,
+    TourMatMenuModule.forRoot(),
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [ModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
