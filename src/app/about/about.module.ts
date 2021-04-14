@@ -13,14 +13,16 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { AboutComponent } from './about.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PublicModule } from '../public/public.module';
+
 const routes: Routes = [
     {
-        path     : '',
+        path     : 'about',
         component: AboutComponent
     },
-    //{
-    //    path: '', redirectTo: 'about', pathMatch: 'full' // default: redirect to about when public
-    //},
+    {
+        path: '', redirectTo: 'about', pathMatch: 'full' // default: redirect to about when public
+    },
 ];
 
 @NgModule({
@@ -37,6 +39,7 @@ const routes: Routes = [
         // MatInputModule,
         // MatCardModule,
       MatDividerModule,
+      PublicModule,
       FlexLayoutModule
     ]
 })

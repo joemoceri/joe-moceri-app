@@ -1,0 +1,87 @@
+a {
+  /*color: #87c755 !important;*/
+  /*color: #559325 !important;*/
+  /*color: #409300 !important;*/
+}
+
+strong {
+  font-weight: 900 !important;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.header-border {
+  /*min-height: 120px !important;*/
+}
+
+.footer-border {
+  width: 100%;
+  text-align: left;
+  background: rgb(245, 245, 245);
+}
+
+.navbar-default {
+  background-color: #333;
+  border: none;
+  -webkit-box-shadow: 0 1px 0.5em #000;
+  -moz-box-shadow: 0 1px 0.5em #000;
+  box-shadow: 0 1px 0.5em #000;
+
+  padding: 12px;
+}
+
+#public {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+
+  #public-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto !important;
+    justify-content: center;
+    align-items: center;
+    -webkit-flex: 1 0 auto !important;
+    /*padding: 32px;*/
+
+    #public-form {
+
+      #header-container {
+        white-space: nowrap;
+        /*text-align: center !important;*/
+        #header-item {
+          display: block !important;
+          float: none !important;
+        }
+      }
+
+      mat-icon {
+        /*color: #4285F4;*/
+        color: #8e7bff;
+      }
+
+      width: 100%;
+      /*max-width: 1280px;*/
+      /*background: rgb(245, 245, 245);*/
+      /*@include mat-elevation(16);*/
+      #public-content {
+        min-height: 400px;
+        /*background-color: #3C2F99;*/
+        /*background-color: #781446;*/
+        /*background-color: #3c0b43;*/
+        /*background-color: #ebeed9;*/
+        /*background-color: #eee9ec;*/
+        /*background-color: #9b3234;*/
+        /*background: url('/assets/images/background-dark.1280.png') no-repeat;*/
+        /*background-color: #fff;*/
+      }
+    }
+  }
+}

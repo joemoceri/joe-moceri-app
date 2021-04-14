@@ -1,0 +1,29 @@
+<div id="public" class="container">
+  <div id="public-form-wrapper" fxLayout="column" fxLayoutAlign="start end" fxFlex="100">
+    <div class="content-border" id="public-form">
+      <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="start start">
+        <div fxLayout="column" fxFlex="100" fxAlign="center">
+          <div id="public-content">
+            <!-- Header -->
+            <div class="navbar-default">
+
+                <h2 style="margin-bottom: 0px !important;">
+                  <a [routerLink]="'/about'">About</a> | <a [routerLink]="'/timeline'">Timeline</a>
+                  <span style="float: right;">
+                      <a style="padding: 6px; align-content: center;" href="https://stackoverflow.com/users/8293151/jmoceri" target="_blank"><img src="assets/images/icons/stack-overflow-icon.png" style="width: 32px; height: 32px;" /></a>
+                      <a style="padding: 6px; align-content: center;" href="https://github.com/jmoceri34" target="_blank"><img src="assets/images/icons/GitHub-Mark-32px.png" style="width: 32px; height: 32px;" /></a>
+                      <a style="padding: 6px;" href="https://medium.com/@jmoceri34" target="_blank"><img src="assets/images/icons/Monogram.png" style="width: 32px; height: 32px;" /></a>
+                      <a style="padding: 6px;" href="https://www.npmjs.com/~jmoceri" target="_blank"><img src="assets/images/icons/n-64.png" style="width: 32px; height: 32px;" /></a>
+                      <a style="padding: 6px;" href="https://www.nuget.org/profiles/jmoceri" target="_blank"><img src="assets/images/icons/nuget.png" style="width: 32px; height: 32px;" /></a>
+                      <a style="padding: 6px;" href="https://www.openprocessing.org/user/38862" target="_blank"><img src="assets/images/icons/processing.png" style="width: 32px; height: 32px;" /></a>
+                      <a style="padding: 6px;" href="https://www.behance.net/joemoceri" target="_blank"><img src="assets/images/icons/behance.png" style="width: 32px; height: 32px;" /></a>
+                  </span>
+                </h2>
+            </div>
+            <ng-content></ng-content>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

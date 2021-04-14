@@ -4,9 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 
   {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
-  }, {
+    path: '',
+    loadChildren: () => import('./public/public-routing.module').then(m => m.PublicRoutingModule)
+  },
+  {
     path: '**',
     redirectTo: 'about'
   }
