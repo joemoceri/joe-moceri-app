@@ -1,0 +1,41 @@
+the-star-maker {
+
+  #the-star-maker {
+    /*background-color: #fff;*/
+    width: 100%;
+    /*background-size: cover;*/
+
+    #the-star-maker-form-wrapper {
+      flex: 1 0 auto !important;
+      -webkit-flex: 1 0 auto !important;
+      justify-content: flex-start !important;
+
+      #the-star-maker-form {
+
+        mat-icon {
+          color: #8e7bff;
+          display: none !important;
+        }
+
+        /*background-color: #fff;*/
+        /*max-width: 100%;*/
+        width: 100%;
+        /*padding: 12px;*/
+      }
+    }
+
+    p {
+      padding-top: 6px;
+    }
+  }
+
+  .the-star-maker-photo {
+    max-width: 512px;
+  }
+}
+
+.the-star-maker-text {
+    a {
+        color: #fff;
+    }
+}

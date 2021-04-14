@@ -12,15 +12,15 @@
                 <a style="color: #fff;" href="javascript:void(0)" [routerLink]="'/timeline'" [routerLinkActive]="['router-link-active']">Timeline</a> |
                 <button mat-button [matMenuTriggerFor]="menu"><span style="color: #fff;">{{gamesNavButtonText}}</span></button>
                 <mat-menu #menu="matMenu">
-                  <button mat-menu-item>Box Copter Hero</button>
-                  <button mat-menu-item>Box Copter Hero 3D</button>
-                  <button mat-menu-item>Mad Scientist And Monster</button>
-                  <button mat-menu-item>MetalTron</button>
-                  <button mat-menu-item>R Down</button>
-                  <button mat-menu-item>Run Through The Hills</button>
+                  <button mat-menu-item [routerLink]="'/games/box-copter-hero'">Box Copter Hero</button>
+                  <button mat-menu-item [routerLink]="'/games/box-copter-hero-3d'">Box Copter Hero 3D</button>
+                  <button mat-menu-item [routerLink]="'/games/mad-scientist-and-monster'">Mad Scientist And Monster</button>
+                  <button mat-menu-item [routerLink]="'/games/metaltron'">MetalTron</button>
+                  <button mat-menu-item [routerLink]="'/games/r-down'">R Down</button>
+                  <button mat-menu-item [routerLink]="'/games/run-through-the-hills'">Run Through The Hills</button>
                   <button mat-menu-item [routerLink]="'/games/swinging-in-caves'">Swinging In Caves</button>
-                  <button mat-menu-item>Symbol Match</button>
-                  <button mat-menu-item>The Star Maker</button>
+                  <button mat-menu-item [routerLink]="'/games/symbol-match'">Symbol Match</button>
+                  <button mat-menu-item [routerLink]="'/games/the-star-maker'">The Star Maker</button>
                 </mat-menu>
                 <a id="navigatorId" href="" target="_blank"></a>
                 <button mat-button [matMenuTriggerFor]="projectsMenu"><span style="color: #fff;">Projects</span></button>

@@ -1,0 +1,41 @@
+box-copter-hero {
+
+  #box-copter-hero {
+    /*background-color: #fff;*/
+    width: 100%;
+    /*background-size: cover;*/
+
+    #box-copter-hero-form-wrapper {
+      flex: 1 0 auto !important;
+      -webkit-flex: 1 0 auto !important;
+      justify-content: flex-start !important;
+
+      #box-copter-hero-form {
+
+        mat-icon {
+          color: #8e7bff;
+          display: none !important;
+        }
+
+        /*background-color: #fff;*/
+        /*max-width: 100%;*/
+        width: 100%;
+        /*padding: 12px;*/
+      }
+    }
+
+    p {
+      padding-top: 6px;
+    }
+  }
+
+  .box-copter-hero-photo {
+    max-width: 512px;
+  }
+}
+
+.box-copter-hero-text {
+    a {
+        color: #fff;
+    }
+}

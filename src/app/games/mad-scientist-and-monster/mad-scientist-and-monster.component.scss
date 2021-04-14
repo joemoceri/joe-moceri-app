@@ -1,0 +1,41 @@
+mad-scientist-and-monster {
+
+  #mad-scientist-and-monster {
+    /*background-color: #fff;*/
+    width: 100%;
+    /*background-size: cover;*/
+
+    #mad-scientist-and-monster-form-wrapper {
+      flex: 1 0 auto !important;
+      -webkit-flex: 1 0 auto !important;
+      justify-content: flex-start !important;
+
+      #mad-scientist-and-monster-form {
+
+        mat-icon {
+          color: #8e7bff;
+          display: none !important;
+        }
+
+        /*background-color: #fff;*/
+        /*max-width: 100%;*/
+        width: 100%;
+        /*padding: 12px;*/
+      }
+    }
+
+    p {
+      padding-top: 6px;
+    }
+  }
+
+  .mad-scientist-and-monster-photo {
+    max-width: 512px;
+  }
+}
+
+.mad-scientist-and-monster-text {
+    a {
+        color: #fff;
+    }
+}

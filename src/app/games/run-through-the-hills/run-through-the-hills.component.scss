@@ -1,0 +1,41 @@
+run-through-the-hills {
+
+  #run-through-the-hills {
+    /*background-color: #fff;*/
+    width: 100%;
+    /*background-size: cover;*/
+
+    #run-through-the-hills-form-wrapper {
+      flex: 1 0 auto !important;
+      -webkit-flex: 1 0 auto !important;
+      justify-content: flex-start !important;
+
+      #run-through-the-hills-form {
+
+        mat-icon {
+          color: #8e7bff;
+          display: none !important;
+        }
+
+        /*background-color: #fff;*/
+        /*max-width: 100%;*/
+        width: 100%;
+        /*padding: 12px;*/
+      }
+    }
+
+    p {
+      padding-top: 6px;
+    }
+  }
+
+  .run-through-the-hills-photo {
+    max-width: 512px;
+  }
+}
+
+.run-through-the-hills-text {
+    a {
+        color: #fff;
+    }
+}
