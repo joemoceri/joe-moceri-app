@@ -18,6 +18,7 @@ import { RDownModule } from '../games/r-down/r-down.module';
 import { RunThroughTheHillsModule } from '../games/run-through-the-hills/run-through-the-hills.module';
 import { SymbolMatchModule } from '../games/symbol-match/symbol-match.module';
 import { TheStarMakerModule } from '../games/the-star-maker/the-star-maker.module';
+import { PrivacyModule } from '../privacy/privacy.module';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { TheStarMakerModule } from '../games/the-star-maker/the-star-maker.modul
     RunThroughTheHillsModule,
     SymbolMatchModule,
     TheStarMakerModule,
+    PrivacyModule,
       FlexLayoutModule
   ]
 })

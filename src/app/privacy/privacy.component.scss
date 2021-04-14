@@ -1,0 +1,41 @@
+privacy {
+
+  #privacy {
+    /*background-color: #fff;*/
+    width: 100%;
+    /*background-size: cover;*/
+
+    #privacy-form-wrapper {
+      flex: 1 0 auto !important;
+      -webkit-flex: 1 0 auto !important;
+      justify-content: flex-start !important;
+
+      #privacy-form {
+
+        mat-icon {
+          color: #8e7bff;
+          display: none !important;
+        }
+
+        /*background-color: #fff;*/
+        width: 100%;
+        /*max-width: 100%;*/
+        /*padding: 12px;*/
+      }
+    }
+
+    p {
+      padding-top: 6px;
+    }
+  }
+
+  .privacy-photo {
+    max-width: 512px;
+  }
+}
+
+.privacy-text {
+    a {
+        color: #fff;
+    }
+}

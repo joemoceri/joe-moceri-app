@@ -10,6 +10,7 @@ import { Entry } from './entry.model';
 import { TourService, IStepOption } from 'ngx-tour-md-menu';
 import { Tag } from './tag.model';
 import { TimelineEntry } from './timeline-entry.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector     : 'cv',
@@ -42,10 +43,16 @@ export class CvComponent implements OnInit
     entries : TimelineEntry[] = [];
     selectedTags: Tag[] = [];
     mustHaveAllTags: boolean = false;
+    queryStringId: number | null = null;
 
-    constructor(private cvService: CvService, private modalService: ModalService, public tourService: TourService
+  constructor(private cvService: CvService, private modalService: ModalService, public tourService: TourService, private activatedRoute: ActivatedRoute
     )
-    {
+  {
+    this.activatedRoute.queryParams.subscribe(params => {
+      let id = params['id'];
+      this.queryStringId = parseInt(id);
+    });
+
         this.tourService.stepShow$.subscribe((step: IStepOption) => {
             if (step.anchorId == 'firstTimelineEntry') {
                 this.goToTag('Tax Receipt Organizer');
@@ -137,6 +144,13 @@ export class CvComponent implements OnInit
 
                     this.entries.push(entry);
                 }
+
+                if (this.queryStringId) {
+                  setTimeout(() => {
+                    this.goToTagById(this.queryStringId);
+                  }, 250);
+
+                }
             },
             error => {
                 this.modalService.alertError(error);
@@ -160,6 +174,41 @@ export class CvComponent implements OnInit
 
   onDotClick($event: MouseEvent): void {
 
+  }
+
+  goToTagById(entryId: number | null): void {
+
+    if (!entryId) {
+      return;
+    }
+
+    let selectedId;
+    let el: any;
+
+    for (let i = 0; i < this.entries.length; i++) {
+      for (let entry of this.entries[i].dataSource.data) {
+        if (entry.Id == entryId) {
+          selectedId = i;
+          el = <HTMLElement><unknown>entry;
+        }
+      }
+    }
+
+    let elementId = "entry_" + selectedId;
+
+    let entryComponents = this.entryComponents == null ? [] : this.entryComponents.toArray();
+
+    for (let entryComponent of entryComponents) {
+      let componentElementId = (entryComponent as any).elementRef.nativeElement.id;
+
+      if (componentElementId === elementId) {
+        // expand the year
+        entryComponent.expand();
+      }
+    }
+
+    // expand the entry
+    this.expandedElement = el;
   }
 
     goToTag(entryName: any) : void {
