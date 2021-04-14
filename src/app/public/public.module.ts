@@ -8,6 +8,7 @@ import { PublicComponent } from './public.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
 import { AboutModule } from '../about/about.module';
+import { MatMenuModule } from '@angular/material/menu';
 //import { CvModule } from '../cv/cv.module';
 
 
@@ -16,7 +17,8 @@ import { AboutModule } from '../about/about.module';
         PublicComponent
     ],
   imports: [
-        MatButtonModule,
+    MatButtonModule,
+    MatMenuModule,
         // MatCheckboxModule,
         // MatFormFieldModule,
         MatIconModule,

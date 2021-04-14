@@ -38,7 +38,11 @@ strong {
   -moz-box-shadow: 0 1px 0.5em #000;
   box-shadow: 0 1px 0.5em #000;
 
+  overflow: auto;
   padding: 12px;
+  min-height: 100% !important;
+  height: 100% !important;
+  
 }
 
 #public {
