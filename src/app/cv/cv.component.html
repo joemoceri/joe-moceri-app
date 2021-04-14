@@ -4,19 +4,23 @@
     <div id="cv">
       <div id="cv-form">
 
-        <div style="padding: 12px;" class="example-container">
-          <h1 style="margin-top: 0px !important;">
+        <div style="padding: 12px;" class="example-container jumbotron">
+          <div style="margin-top: 0px !important;">
             <button style="float: right;" mat-raised-button (click)="tourService.toggle()" color="primary">Need help?</button>
-            <span>CV Overview</span>
-          </h1>
-          <p>
+            <h1 class="subHeader">Timeline Overview</h1>
+          </div>
+          <p style="    display: inline-block !important;
+    color: #fff;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: 'Raleway', sans-serif;">
             Welcome to the CV Timeline Application. Below you'll find a timeline of development work.
             The timeline can be filtered by tags, such as <a href="javascript:void(0)" (click)="selectTag('Web Development')">Web Development</a>,
             <a href="javascript:void(0)" (click)="selectTag('Game Development')">Game Development</a>, or <a href="javascript:void(0)" (click)="selectTag('C#')">C#</a>.
           </p>
-          <h1 class="ec-container-h">
-            <span tourAnchor="tags">Tags</span>
-          </h1>
+          <h1 class="subHeader" style="font-size: 36px !important;" tourAnchor="tags">Tags</h1>
+          <h2 class="ec-container-h">
+          </h2>
 
           <mat-checkbox class="example-margin" [(ngModel)]="mustHaveAllTags" (change)="onMustHaveAllTagsChanged()"><span tourAnchor="mustHaveAllTags">must have all tags</span></mat-checkbox>
           <mat-form-field>
@@ -33,80 +37,83 @@
           <div>
             <button mat-raised-button (click)="clearTags()" tourAnchor="clearTags">clear tags</button>
           </div>
-          <h3 class="secondary-text ec-container-h"><span tourAnchor="chipList">Click to view any of the following ({{entriesShown}})</span></h3>
+          <h3 class="secondary-text ec-container-h" style="text-align: left !important;"><span tourAnchor="chipList">Click to view any of the following ({{entriesShown}})</span></h3>
           <mat-chip-list>
             <mat-chip style="display: none;"></mat-chip>
             <mat-chip *ngFor="let entry of getEntriesShown()" (click)="goToTag(entry)"><small>{{entry}}</small></mat-chip>
           </mat-chip-list>
-          <h2 class="ec-container-h"><span tourAnchor="predefinedTagGroups">Predefined Tag Groups</span></h2>
+          <h1 class="ec-container-h subHeader" style="font-size: 36px !important;"><span tourAnchor="predefinedTagGroups">Predefined Tag Groups</span></h1>
           <div>
             <button *ngFor="let group of predefinedTagGroups" mat-raised-button (click)="usePredefinedTagGroup(group.Name)" color="primary" style="margin-right: 12px !important; margin-top: 12px !important;">{{group.Name}}</button>
           </div>
         </div>
 
-        <mat-toolbar color="primary" style="margin-top: 25px !important;">
-          <span tourAnchor="timeline">Timeline</span>
-        </mat-toolbar>
-        <mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side" style="font-family: inherit !important">
-          <mgl-timeline-entry *ngFor="let entry of filterEntries(); let i = index;" (expand)="onExpandEntry($event, i, target)" #target id="entry_{{i}}" [tourAnchor]="i === 0 ? 'firstTimelineEntry' : 'timeline_' + i">
-            <mgl-timeline-entry-header (click)="onHeaderClick($event, i)">
-              <div [ngClass]="{'secondary-text' : noEntriesToShow(entry)}">
-                <h1>{{entry.date}}</h1>
-                <p>{{entry.header}}</p>
-              </div>
-            </mgl-timeline-entry-header>
-            <mgl-timeline-entry-content style="overflow: auto;">
-              <div style="padding-bottom: 200px;">
+        <div class="normalContainer">
+          <mat-toolbar color="primary">
+            <span tourAnchor="timeline">Timeline</span>
+          </mat-toolbar>
+          <mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side" style="font-family: inherit !important">
+            <mgl-timeline-entry *ngFor="let entry of filterEntries(); let i = index;" (expand)="onExpandEntry($event, i, target)" #target id="entry_{{i}}" [tourAnchor]="i === 0 ? 'firstTimelineEntry' : 'timeline_' + i">
+              <mgl-timeline-entry-header (click)="onHeaderClick($event, i)">
+                <div [ngClass]="{'secondary-text' : noEntriesToShow(entry)}">
+                  <h1>{{entry.date}}</h1>
+                  <p>{{entry.header}}</p>
+                </div>
+              </mgl-timeline-entry-header>
+              <mgl-timeline-entry-content style="overflow: auto;">
+                <div style="padding-bottom: 200px;">
 
-                <table mat-table
-                       [dataSource]="entry.dataSource" multiTemplateDataRows
-                       class="mat-elevation-z8">
-                  <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
-                    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-                    <td mat-cell *matCellDef="let element">
-                      <span [ngClass]="checkActiveElement(element)">
-                        {{element[column]}}
-                      </span>
-                    </td>
-                  </ng-container>
+                  <table mat-table
+                         [dataSource]="entry.dataSource" multiTemplateDataRows
+                         class="mat-elevation-z8">
+                    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+                      <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+                      <td mat-cell *matCellDef="let element">
+                        <span [ngClass]="checkActiveElement(element)">
+                          {{element[column]}}
+                        </span>
+                      </td>
+                    </ng-container>
 
-                  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
-                  <ng-container matColumnDef="expandedDetail">
-                    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
-                      <div class="example-element-detail"
-                           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-                        <div class="example-element-description">
-                          <h4>Tags</h4>
-                          <p class="secondary-text">{{renderTags(element.Tags)}}</p>
-                          <h4>Overview</h4>
-                          <div [innerHtml]="element.Description"></div>
-                          <!--{{element.description}}-->
+                    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+                    <ng-container matColumnDef="expandedDetail">
+                      <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                        <div class="example-element-detail"
+                             [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                          <div class="example-element-description">
+                            <h4>Tags</h4>
+                            <p class="secondary-text">{{renderTags(element.Tags)}}</p>
+                            <h4>Overview</h4>
+                            <div [innerHtml]="element.Description"></div>
+                            <!--{{element.description}}-->
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                  </ng-container>
+                      </td>
+                    </ng-container>
 
-                  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-                  <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
-                      class="example-element-row"
-                      [class.example-expanded-row]="expandedElement === element"
-                      (click)="expandedElement = expandedElement === element ? null : element" id="{{element.Name}}"
-                      [tourAnchor]="i === 0 && element.Name == 'Tax Receipt Organizer' ? 'firstTimelineDataEntry' : element.Name"></tr>
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+                        class="example-element-row"
+                        [class.example-expanded-row]="expandedElement === element"
+                        (click)="expandedElement = expandedElement === element ? null : element" id="{{element.Name}}"
+                        [tourAnchor]="i === 0 && element.Name == 'Tax Receipt Organizer' ? 'firstTimelineDataEntry' : element.Name"></tr>
 
-                  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+                    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
 
-                </table>
-              </div>
-            </mgl-timeline-entry-content>
-            <mgl-timeline-entry-dot [class]="color ? 'primary' : 'accent'"
-                                    [size]="size"
-                                    (click)="onDotClick($event)"
-                                    style="    text-align: center;
+                  </table>
+                </div>
+              </mgl-timeline-entry-content>
+              <mgl-timeline-entry-dot [class]="color ? 'primary' : 'accent'"
+                                      [size]="size"
+                                      (click)="onDotClick($event)"
+                                      style="    text-align: center;
     background-color: rgb(233, 30, 99);
     color: rgb(233, 30, 99)
 "></mgl-timeline-entry-dot>
-          </mgl-timeline-entry>
-        </mgl-timeline>
+            </mgl-timeline-entry>
+          </mgl-timeline>
+        </div>
+
       </div>
     </div>
   </div>
