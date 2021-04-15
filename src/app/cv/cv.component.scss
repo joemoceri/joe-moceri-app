@@ -134,3 +134,29 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-description-attribution {
     opacity: 0.5;
 }
+
+.timeline-text {
+  a {
+    color: #fff;
+  }
+}
+
+.mat-form-field-label {
+  color: white !important;
+}
+
+.mat-form-field-underline {
+  background-color: white !important;
+}
+
+.mat-form-field-ripple {
+  background-color: white !important;
+}
+
+.mat-select-value-text {
+    color: #fff !important;
+}
+
+.mat-select-arrow {
+    color: #fff !important;
+}

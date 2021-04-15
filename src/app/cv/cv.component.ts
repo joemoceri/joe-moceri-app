@@ -176,6 +176,15 @@ export class CvComponent implements OnInit
 
   }
 
+  navigate(url: string): void {
+
+    let a = document.getElementById('navigatorId');
+
+    a?.setAttribute('href', url);
+
+    a?.click();
+  }
+
   goToTagById(entryId: number | null): void {
 
     if (!entryId) {
