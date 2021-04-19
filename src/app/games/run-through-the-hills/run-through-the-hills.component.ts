@@ -21,5 +21,14 @@ export class RunThroughTheHillsComponent implements OnInit
     ngOnInit(): void
     {
 
-    }
+  }
+
+  navigate(url: string): void {
+
+    let a = document.getElementById('navigatorId');
+
+    a?.setAttribute('href', url);
+
+    a?.click();
+  }
 }
