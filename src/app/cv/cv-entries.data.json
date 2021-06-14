@@ -665,7 +665,7 @@
     "Description": "",
     "Year": 2015,
     "OpenProcessingUrl": null,
-    "GitHubUrl": "https://github.com/joemoceri/expression-evaluator",
+    "GitHubUrl": "https://github.com/joemoceri/expression-evaluator-dotnet",
     "NPMUrl": null,
     "BehanceUrl": null,
     "NuGetUrl": "https://www.nuget.org/packages/ExpressionEvaluatorForDotNet",
