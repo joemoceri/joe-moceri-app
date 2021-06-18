@@ -20,7 +20,7 @@ export class PublicComponent implements OnInit
       router.events.subscribe(e => {
         if (e instanceof NavigationEnd) {
           if (e.url.endsWith('swinging-in-caves')) {
-            this.gamesNavButtonText = 'Games (selected: Swinging In Caves)';
+            this.gamesNavButtonText = 'Games (selected: Swingin\' In Caves)';
           }
           else if (e.url.endsWith('box-copter-hero')) {
             this.gamesNavButtonText = 'Games (selected: Box Copter Hero)';
