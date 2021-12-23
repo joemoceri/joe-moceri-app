@@ -93,7 +93,7 @@
                           <p class="secondary-text">Tags: {{renderTags(element.Tags)}}</p>
                           <h3 style="text-align: left !important;">External Links for this Project</h3>
                           <div style="padding: 12px;">
-                            <button mat-raised-button *ngIf="element.WebsiteUrl" (click)="navigate(element.WebsiteUrl)" color="primary">See Page</button>
+                            <!--<button mat-raised-button *ngIf="element.WebsiteUrl" (click)="navigate(element.WebsiteUrl)" color="primary">See Page</button>-->
                             <a *ngIf="element.LinkedInUrl" (click)="navigate(element.LinkedInUrl)" style="padding: 6px; align-content: center;"><img src="assets/images/icons/linkedin-icon.png" style="width: 32px; height: 32px;" /></a>
                             <a *ngIf="element.GitHubUrl" (click)="navigate(element.GitHubUrl)" style="padding: 6px; align-content: center;"><img src="assets/images/icons/GitHub-Mark-32px.png" style="width: 32px; height: 32px;" /></a>
                             <a *ngIf="element.MediumUrl" (click)="navigate(element.MediumUrl)" style="padding: 6px;"><img src="assets/images/icons/Monogram.png" style="width: 32px; height: 32px;" /></a>
