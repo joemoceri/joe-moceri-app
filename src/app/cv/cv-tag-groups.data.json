@@ -22,6 +22,10 @@
       {
         "Id": 45,
         "Name": "SQL Server"
+      },
+      {
+        "Id": 9001,
+        "Name": "Mongo DB"
       }
     ]
   },
@@ -230,6 +234,14 @@
       {
         "Id": 54,
         "Name": "WordPress"
+      },
+      {
+        "Id": 9002,
+        "Name": "VueJS"
+      },
+      {
+        "Id": 9003,
+        "Name": "ReactJS"
       }
     ]
   }
